@@ -1,0 +1,6 @@
+const fs = require("fs");
+const input = fs.readFileSync("./input.txt").toString().split("\n");
+for (let i = 1; i <= Number(input[0]); i++) {
+  let AB = input[i].split(" ");
+  console.log(Number(AB[0]) + Number(AB[1]));
+}
