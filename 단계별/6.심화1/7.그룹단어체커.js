@@ -4,23 +4,21 @@ let input = require("fs")
   .readFileSync("./input.txt")
   .toString()
   .trim()
-  .toUpperCase()
-  .split("")
-  .sort();
-let ans = input[0];
-let cnt = 1;
-let ans_cnt = 0;
-for (let i = 0; i < input.length - 1; i++) {
-  if (input[i].charCodeAt(0) >= 65 && input[i].charCodeAt(0) <= 90) {
-    if (input[i] == input[i + 1]) {
-      cnt++;
-      if (cnt > ans_cnt) {
-        ans = input[i];
-        ans_cnt = cnt;
-      } else if (cnt == ans_cnt) ans = "?";
-    } else {
-      cnt = 1;
+  .split(`\n`);
+
+let cnt = input[0];
+let alphabet = new Array(26).fill(0);
+
+for (let i = 1; i <= cnt; i++) {
+  let arr = input[i].split("");
+  for (let j = 0; j < input[i].length; j++) {
+    if (
+      alphabet[input[i][j].charCodeAt(0) - 97] == 0 ||
+      input[i][j] == input[i][j - 1]
+    ) {
+      alphabet[input[i][j].charCodeAt(0) - 97]++;
     }
   }
 }
-console.log(ans);
+
+console.log(alphabet);
