@@ -5,7 +5,6 @@ let ans_star = "";
 for (let i = 0; i < input; i++) {
   ans_space += " ";
 }
-console.log("<" + ans_space + ">");
 for (let i = 0; i < input; i++) {
   ans_space = ans_space.slice(0, -1);
   ans_star += "*";

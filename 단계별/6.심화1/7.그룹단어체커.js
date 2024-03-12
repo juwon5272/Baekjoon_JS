@@ -8,6 +8,8 @@ let input = require("fs")
 
 let cnt = input[0];
 let alphabet = new Array(26).fill(0);
+let ans = 0;
+let isGroup = 1;
 
 for (let i = 1; i <= cnt; i++) {
   let arr = input[i].split("");
@@ -17,6 +19,8 @@ for (let i = 1; i <= cnt; i++) {
       input[i][j] == input[i][j - 1]
     ) {
       alphabet[input[i][j].charCodeAt(0) - 97]++;
+    } else {
+      isGroup = 0;
     }
   }
 }

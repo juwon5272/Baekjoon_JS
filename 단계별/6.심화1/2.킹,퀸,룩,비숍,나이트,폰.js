@@ -1,3 +1,5 @@
+// https://www.acmicpc.net/problem/3003
+
 let input = require("fs")
   .readFileSync("./input.txt")
   .toString()
