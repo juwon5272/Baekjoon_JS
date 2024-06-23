@@ -1,3 +1,5 @@
+// https://www.acmicpc.net/problem/2606
+
 let input = require("fs").readFileSync("/dev/stdin").toString().split("\n");
 let node = Number(input[0]);
 let edge_num = Number(input[1]);
