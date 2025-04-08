@@ -1,19 +1,19 @@
-// https://www.acmicpc.net/problem/1436
+// https://www.acmicpc.net/problem/1436ㄴ
 
-const input = require("fs")
-  .readFileSync("./input.txt")
-  .toString()
-  .trim()
-  .split("\n")
-  .map((e) => e.split(" ").map((e) => +e));
+const fs = require("fs");
+const input = Number(fs.readFileSync("./input.txt").toString().trim());
 
-const N = input.shift();
-let sortArr = input.sort((a, b) => {
-  if (b[1] / b[0] == a[1] / a[0]) {
-    return a[0] - b[0];
-  } else {
-    return b[1] / b[0] - a[1] / a[0];
+const N = input;
+let count = 0;
+let num = 666;
+
+while (true) {
+  if (String(num).includes("666")) {
+    count++;
+    if (count === N) {
+      console.log(num);
+      break;
+    }
   }
-});
-
-console.log(sortArr);
+  num++;
+}
